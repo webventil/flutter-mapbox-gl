@@ -99,6 +99,12 @@ class CameraUpdate {
     );
   }
 
+  /// Returns a camera update that moves the camera to a specified bounds.
+  static CameraUpdate newLatLngList(List<LatLng> list) {
+    return CameraUpdate._(
+        <dynamic>['newLatLngList', list.map((e) => e.toJson())]);
+  }
+
   /// Returns a camera update that moves the camera target to the specified
   /// geographical location.
   static CameraUpdate newLatLng(LatLng latLng) {

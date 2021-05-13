@@ -65,6 +65,10 @@ class Convert {
             let camera = mapView.camera
             camera.centerCoordinate = CLLocationCoordinate2D.fromArray(coordinate)
             return camera
+        case "newLatLngList":
+            guard let coordinates = cameraUpdate[1] as? [[Double]] else { return nil }
+            let camera = mapView.cameraThatFitsCoordinateBounds(MGLCoordinateBounds.fromArray(coordinates))
+            return camera
         case "newLatLngBounds":
             guard let bounds = cameraUpdate[1] as? [[Double]] else { return nil }
             guard let paddingLeft = cameraUpdate[2] as? CGFloat else { return nil }

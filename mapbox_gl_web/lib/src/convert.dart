@@ -89,6 +89,14 @@ class Convert {
           pitch: mapboxMap.getPitch(),
           bearing: mapboxMap.getBearing(),
         );
+      case 'newLatLnList':
+        final target = json[1];
+        return CameraOptions(
+          center: LngLat(target[1], target[0]),
+          zoom: mapboxMap.getZoom(),
+          pitch: mapboxMap.getPitch(),
+          bearing: mapboxMap.getBearing(),
+        );
       case 'newLatLngBounds':
         final bounds = json[1];
         final left = json[2];
