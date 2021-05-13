@@ -73,7 +73,7 @@ packages:
       path: mapbox_gl_web
       relative: true
     source: path
-    version: "0.12.0"
+    version: "0.13.0"
   meta:
     dependency: transitive
     description:
